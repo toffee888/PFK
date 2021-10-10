@@ -8,6 +8,7 @@
        <script>
         var audio = new Audio('m.mp3');
         audio.loop = false;
+        audio.oncanplaythrough = isAppLoaded;
         audio.play();
       </script>
   </head>
