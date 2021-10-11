@@ -13,7 +13,7 @@
     <a-scene>
         <a-sky src="puydesancy.jpg" rotation="0 -130 0"></a-sky>
       
-      <a-image src="u.jpeg" id="u" scale ="1 1 1" position="2 1.5 0" rotation="0 -70 0" width="1" height="1.416"></a-image>
+      <a-image src="u.jpeg" id="u" scale ="1 1 1" position="2 1.5 0" rotation="0 -70 0" width="1" height="1.416" sound="src: url(m.mp3); on: click"></a-image>
       
       <a-entity camera="" position="0 1.6 0" rotation="" look-controls="" aframe-injected="" data-aframe-inspector-original-camera="">
         
@@ -24,15 +24,6 @@
       <a-entity light="intensity: 0.6; castShadow: true" position="-0.5 1 1" data-aframe-default-light="" aframe-injected=""></a-entity>
       
     </a-scene>
-    
-        <script>
-        var audio = new Audio('m.mp3');
-        audio.loop = false;
-        document.getElementById("u").addEventListener("click", function() {
-        audio.play();
-        });
-        </script>
-    
   </body>
 </html>
 
