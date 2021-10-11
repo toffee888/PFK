@@ -48,8 +48,6 @@
       
       <a-entity camera="" position="0 1.6 0" rotation="" look-controls="" aframe-injected="" data-aframe-inspector-original-camera="">
         
-        <a-cursor></a-cursor>
-        
       </a-entity>
 
       <a-entity light="color: #BBB; type: ambient" data-aframe-default-light="" aframe-injected=""></a-entity>
@@ -63,6 +61,7 @@
 function run() {
   document.getElementById("overlay").style.display = "none";
   var audio = new Audio('m.mp3');
+  audio.oncanplaythrough = isAppLoaded;
   audio.play();
 }
 </script>
