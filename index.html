@@ -6,30 +6,40 @@
     <meta name="description" content="360&deg; Image - A-Frame">
     <script src="aframe-master.js"></script>
     
-    <script>
-    AFRAME.registerComponent('audiohandler', {
-  init:function() {
-     let playing = false;
-     let audio = new Audio('m.mp3');
-     this.el.addEventListener('click', () => {
-          if(!playing) {
-              audio.play();
-           } else {
-              audio.pause();
-           }
-           playing = !playing;
-     });
-  }
-})
-  </script>
+<style>
+#overlay {
+  position: fixed;
+  display: block;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0,0,0,0.5);
+  z-index: 2;
+  cursor: pointer;
+}
+
+#text{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  font-size: 50px;
+  color: white;
+  transform: translate(-50%,-50%);
+  -ms-transform: translate(-50%,-50%);
+}
+</style>
+    
   </head>
 
   <body>
       
-    <audio controls autoplay>
-    <source src="m.mp3" type="audio/mpeg">
-    </audio>
-    
+<div id="overlay" onclick="run()">
+  <div id="text">PFK Mini</div>
+</div>
+
     <a-scene>
         <a-sky src="puydesancy.jpg" rotation="0 -130 0"></a-sky>
       
@@ -47,6 +57,16 @@
       <a-entity light="intensity: 0.6; castShadow: true" position="-0.5 1 1" data-aframe-default-light="" aframe-injected=""></a-entity>
       
     </a-scene>
+    
+<script>
+  
+function run() {
+  document.getElementById("overlay").style.display = "none";
+  var audio = new Audio('m.mp3');
+  audio.play();
+}
+</script>
+    
   </body>
 </html>
 
