@@ -5,6 +5,24 @@
     <title>PFK</title>
     <meta name="description" content="360&deg; Image - A-Frame">
     <script src="aframe-master.js"></script>
+    
+    <script>
+    AFRAME.registerComponent('audiohandler', {
+  init:function() {
+     let playing = false;
+     let audio = new Audio('m.mp3');
+     this.el.addEventListener('click', () => {
+          if(!playing) {
+              audio.play();
+           } else {
+              audio.pause();
+              audio.currentTime = 0;
+           }
+           playing = !playing;
+     });
+  }
+})
+  </script>
   </head>
 
   <body>
@@ -14,7 +32,7 @@
         <a-sky src="puydesancy.jpg" rotation="0 -130 0"></a-sky>
       
       
-      <a-image src="u.jpeg" id="u" scale ="1.5 1.5 1.5" position="2 1.5 -0.25" rotation="0 -80 0" width="1" height="1.416" sound="src: url(m.mp3); on: click"></a-image>
+      <a-image src="u.jpeg" id="u" scale ="1.5 1.5 1.5" position="2 1.5 -0.25" rotation="0 -80 0" width="1" height="1.416" audiohandler></a-image>
       
       <a-entity camera="" position="0 1.6 0" rotation="" look-controls="" aframe-injected="" data-aframe-inspector-original-camera="">
         
